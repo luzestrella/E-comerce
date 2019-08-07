@@ -1,0 +1,29 @@
+<app-nav></app-nav>
+<div class="container">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Product line</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Precio Unitario</th>
+        <th scope="col">Total</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let producto of productos">
+        <td>{{producto.product.productName}} </td>
+         <td> {{producto.product.productLine}}</td>
+        <td> <input type="number"[value]="producto.quantity" (change)="changePrice(producto.product, $event.target.value)"> </td>
+        <td>{{producto.product.MSRP}}</td>
+        <td>{{producto.product.MSRP*producto.quantity}}</td>
+        <td><button type="button" class="btn btn-primary" (click)= "eliminarProducto(producto.product)"></button>
+        </td>
+      </tr>
+      <tr>
+       
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>
