@@ -7,19 +7,22 @@ import { PageNotFoundComponent } from './store/page-not-found/page-not-found.com
 
 const routes: Routes = [
   {
-    path:'store', component: StoreComponent
+    path: 'store', component: StoreComponent
   },
   {
-    path:'cart', component:CartComponent
+    path: 'store/:productCode', component: CheckoutComponent
   },
   {
-    path:'checkout',component:CheckoutComponent
+    path: 'cart', component: CartComponent
   },
   {
-    path:'', redirectTo:'/store', pathMatch:'full'
+    path: 'checkout', component: CheckoutComponent
   },
   {
-     path:'**', component:PageNotFoundComponent
+    path: '', redirectTo: '/store', pathMatch: 'full'
+  },
+  {
+    path: '**', component: PageNotFoundComponent
   }
 
 

@@ -28,6 +28,9 @@ export class ProductRepositoryService {
    
 
   };
+  getProduct(productCode: string){
+  return this.products.filter(p=>productCode == p.productCode);
+  }
  
   getCategories(): string[] {
     return this.categories;
